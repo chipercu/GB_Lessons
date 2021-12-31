@@ -1,7 +1,5 @@
 package lesson_2.homework;
 
-import java.util.Scanner;
-
 public class HomeWork {
     public static void main(String[] args) {
         int value1 = Rnd.getInt(1, 30);

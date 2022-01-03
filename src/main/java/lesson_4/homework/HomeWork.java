@@ -59,38 +59,27 @@ public class HomeWork {
         }
         if (stage.size() == 1 && arr[5] == 3) {
             cell = Rnd.getInt(1, 4);
-            switch (cell) {
-                case 1:
-                    cell = 1;
-                    break;
-                case 2:
-                    cell = 3;
-                    break;
-                case 3:
-                    cell = 7;
-                    break;
-                case 4:
-                    cell = 9;
-                    break;
+            if (cell == 1) {
+                cell = 1;
+            } else if (cell == 2) {
+                cell = 3;
+            } else if (cell == 3) {
+                cell = 7;
+            } else if (cell == 4) {
+                cell = 9;
             }
         } else if (stage.size() == 1 && (arr[1] == 3 || arr[3] == 3 || arr[7] == 3 || arr[9] == 3)) {
             cell = Rnd.getInt(1, 5);
-            switch (cell) {
-                case 1:
-                    cell = 2;
-                    break;
-                case 2:
-                    cell = 4;
-                    break;
-                case 3:
-                    cell = 6;
-                    break;
-                case 4:
-                    cell = 8;
-                    break;
-                case 5:
-                    cell = 5;
-
+            if (cell == 1) {
+                cell = 2;
+            } else if (cell == 2) {
+                cell = 4;
+            } else if (cell == 3) {
+                cell = 6;
+            } else if (cell == 4) {
+                cell = 8;
+            } else if (cell == 5) {
+                cell = 5;
             }
         } else if (stage.size() >= 2) {
             cell = Rnd.getInt(1, 9);
@@ -135,44 +124,34 @@ public class HomeWork {
     }
 
     public static void push(int id, boolean player) {
-        switch (id) {
-            case 1:
-                place2[1][5] = player ? 3 : 4;
-                cellCheck[1] = true;
-                break;
-            case 4:
-                place2[5][5] = player ? 3 : 4;
-                cellCheck[4] = true;
-                break;
-            case 7:
-                place2[9][5] = player ? 3 : 4;
-                cellCheck[7] = true;
-                break;
-            case 2:
-                place2[1][15] = player ? 3 : 4;
-                cellCheck[2] = true;
-                break;
-            case 5:
-                place2[5][15] = player ? 3 : 4;
-                cellCheck[5] = true;
-                break;
-            case 8:
-                place2[9][15] = player ? 3 : 4;
-                cellCheck[8] = true;
-                break;
-            case 3:
-                place2[1][24] = player ? 3 : 4;
-                cellCheck[3] = true;
-                break;
-            case 6:
-                place2[5][24] = player ? 3 : 4;
-                cellCheck[6] = true;
-                break;
-            case 9:
-                place2[9][24] = player ? 3 : 4;
+        if (id == 1) {
+            place2[1][5] = player ? 3 : 4;
+            cellCheck[1] = true;
+        } else if (id == 4) {
+            place2[5][5] = player ? 3 : 4;
+            cellCheck[4] = true;
+        } else if (id == 7) {
+            place2[9][5] = player ? 3 : 4;
+            cellCheck[7] = true;
+        } else if (id == 2) {
+            place2[1][15] = player ? 3 : 4;
+            cellCheck[2] = true;
+        } else if (id == 5) {
+            place2[5][15] = player ? 3 : 4;
+            cellCheck[5] = true;
+        } else if (id == 8) {
+            place2[9][15] = player ? 3 : 4;
+            cellCheck[8] = true;
+        } else if (id == 3) {
+            place2[1][24] = player ? 3 : 4;
+            cellCheck[3] = true;
+        } else if (id == 6) {
+            place2[5][24] = player ? 3 : 4;
+            cellCheck[6] = true;
+        } else if (id == 9) {
+            place2[9][24] = player ? 3 : 4;
 
-                cellCheck[9] = true;
-                break;
+            cellCheck[9] = true;
         }
     }
 
@@ -197,25 +176,19 @@ public class HomeWork {
         System.out.println();
         for (int i = 0; i < 11; i++) {
             for (int j = 0; j < 30; j++) {
-                switch (place2[i][j]) {
-                    case 0:
-                        System.out.print(" ");
-                        break;
-                    case 1:
-                        System.out.print("|");
-                        break;
-                    case 2:
-                        System.out.print("_");
-                        break;
-                    case 3:
-                        System.out.print("X");
-                        break;
-                    case 4:
-                        System.out.print("O");
-                        break;
-                    case 5:
-                        System.out.print(boxId);
-                        boxId++;
+                if (place2[i][j] == 0) {
+                    System.out.print(" ");
+                } else if (place2[i][j] == 1) {
+                    System.out.print("|");
+                } else if (place2[i][j] == 2) {
+                    System.out.print("_");
+                } else if (place2[i][j] == 3) {
+                    System.out.print("X");
+                } else if (place2[i][j] == 4) {
+                    System.out.print("O");
+                } else if (place2[i][j] == 5) {
+                    System.out.print(boxId);
+                    boxId++;
                 }
             }
             System.out.println();

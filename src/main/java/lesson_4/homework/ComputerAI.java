@@ -12,6 +12,7 @@ public class ComputerAI {
     public ComputerAI(int [][] array, boolean[] cellCheck) {
         this.array = array;
         this.cellCheck = cellCheck;
+
     }
 
     public int computerMedium() {
@@ -26,38 +27,27 @@ public class ComputerAI {
         }
         if (stage.size() == 1 && arr[5] == 3) {
             cell = HomeWork.Rnd.getInt(1, 4);
-            switch (cell) {
-                case 1:
-                    cell = 1;
-                    break;
-                case 2:
-                    cell = 3;
-                    break;
-                case 3:
-                    cell = 7;
-                    break;
-                case 4:
-                    cell = 9;
-                    break;
+            if (cell == 1) {
+                cell = 1;
+            } else if (cell == 2) {
+                cell = 3;
+            } else if (cell == 3) {
+                cell = 7;
+            } else if (cell == 4) {
+                cell = 9;
             }
         } else if (stage.size() == 1 && (arr[1] == 3 || arr[3] == 3 || arr[7] == 3 || arr[9] == 3)) {
             cell = HomeWork.Rnd.getInt(1, 5);
-            switch (cell) {
-                case 1:
-                    cell = 2;
-                    break;
-                case 2:
-                    cell = 4;
-                    break;
-                case 3:
-                    cell = 6;
-                    break;
-                case 4:
-                    cell = 8;
-                    break;
-                case 5:
-                    cell = 5;
-
+            if (cell == 1) {
+                cell = 2;
+            } else if (cell == 2) {
+                cell = 4;
+            } else if (cell == 3) {
+                cell = 6;
+            } else if (cell == 4) {
+                cell = 8;
+            } else if (cell == 5) {
+                cell = 5;
             }
         } else if (stage.size() >= 2) {
             cell = HomeWork.Rnd.getInt(1, 9);

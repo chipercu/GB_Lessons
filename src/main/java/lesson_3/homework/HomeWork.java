@@ -27,6 +27,13 @@ public class HomeWork {
         //6 задача
         System.out.println("6 задание --------------------------------------");
         minimumAndMaximumValue(arr3);
+        System.out.println("7 задание --------------------------------------");
+        //int[] arr4 = {-3, -8, 6, 8, 3, -9, 10, 0, -2, 1};
+        int[] arr4 =  new int[10];
+        for (int i = 0; i < arr4.length; i++) {
+            arr4[i] = getRnd(-10, 10);
+        }
+        System.out.println(checkBalance(arr4));
     }
 
     /**
@@ -117,4 +124,37 @@ public class HomeWork {
         System.out.println("Максимальное значение в масиве : " + max);
 
     }
+     /**
+     * седьмая задача, метод вернет true, если в массиве есть место, в котором сумма левой и правой части массива равны.
+     * @param array
+     * @return
+     */
+    public static boolean checkBalance(int [] array){
+        // Заполнение масива случайными значениями
+
+        System.out.println(Arrays.toString(array));
+
+        int firstValue = 0;
+        for (int i = 0; i < array.length; i++) {
+            firstValue += array[i];
+            int twoValue = 0;
+            for (int j = i + 1; j < array.length; j++) {
+                twoValue += array[j];
+            }
+            if (firstValue == twoValue && i != array.length - 1){
+                System.out.println("Баланс масива находится на елементе с индексом " + i );
+                return true;
+            }
+        }
+        System.out.println("В масиве нет баланса");
+        return false;
+    }
+    public static int getRnd(int min, int max){
+        Random rnd = new Random();
+        int result = rnd.nextInt((max - min) + 1);
+        result += min;
+        return result;
+    }
+    
+    
 }
